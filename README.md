@@ -11,7 +11,7 @@ Similarly a web service built using JAVA can be consumed by a .NET application.
 **Hyper Text Transfer Protocol (HTTP)** is the protocl widely used by web services to send and receive messages.
 The messaging protocol is SOAP. SOAP stands for Simple Object Access Protocol. SOAP messages are in XML format.
 
-## SOAP
+## Simple Object Access Protocol (SOAP)
 
 A SOAP message is an XML document containing the following elements:
 
@@ -22,4 +22,4 @@ A SOAP message is an XML document containing the following elements:
 
 SOAP can operate over many transport protocols, including HTTP, SMTP, TCP, and UDP.
 
-***However, an ASMX service can only operate over HTTP.***
+## ***However, an ASMX service can only operate over HTTP.***
