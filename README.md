@@ -22,4 +22,4 @@ A SOAP message is an XML document containing the following elements:
 
 SOAP can operate over many transport protocols, including HTTP, SMTP, TCP, and UDP.
 
-## ***However, an ASMX service can only operate over HTTP.***
+***However, an ASMX service can only operate over HTTP.***
