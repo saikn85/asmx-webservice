@@ -1,14 +1,10 @@
 ﻿using CalculatorWebApp.CalculatorService;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace CalculatorWebApp
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class WebForm1 : Page
     {
         private readonly CalulatorWebServiceSoapClient client;
 
