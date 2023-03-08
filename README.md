@@ -23,3 +23,18 @@ A SOAP message is an XML document containing the following elements:
 SOAP can operate over many transport protocols, including HTTP, SMTP, TCP, and UDP.
 
 ***However, an ASMX service can only operate over HTTP.***
+
+## Web Service Description Language
+
+The WSDL document formally defines a web service. It contains the following
+
+- All the methods that are exposed by the web service
+- The parameters and their types
+- The return types of the methods
+
+### The Proxy Class
+
+Encapsulates the WSDL into language specific ***Serializable Plain Old xxx Objects*** that later can be used/consumed by the ***Client Application***. 
+When a ***Web Service*** is consumed the proxy class will then serialize the parameters, prepares a SOAP request message and sends it to the web service.
+The web service executes the method and returns a SOAP response message to the proxy.
+The proxy class will then deserialize the SOAP response message and hands it the client application.
