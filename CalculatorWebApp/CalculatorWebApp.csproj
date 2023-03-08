@@ -72,6 +72,7 @@
     <Content Include="Connected Services\CalculatorService\CalculatorWebApp.CalculatorService.HelloWorldResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="WebForm1.aspx" />
     <None Include="Connected Services\CalculatorService\CalulatorWebService.disco" />
     <None Include="Connected Services\CalculatorService\configuration91.svcinfo" />
     <None Include="Connected Services\CalculatorService\configuration.svcinfo" />
@@ -88,6 +89,13 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\CalculatorService\CalulatorWebService.wsdl" />

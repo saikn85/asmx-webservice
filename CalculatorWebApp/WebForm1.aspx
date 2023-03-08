@@ -28,7 +28,7 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <asp:Button ID="btnAdd" runat="server" Text="Sum" />
+                        <asp:Button ID="btnAdd" runat="server" Text="Sum" OnClick="btnAdd_Click" />
                     </td>
                 </tr>
             </table>
