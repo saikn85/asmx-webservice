@@ -27,6 +27,66 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SubtractTwoNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="a" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="b" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubtractTwoNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubtractTwoNumberResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MultiplyTwoNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="a" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="b" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MultiplyTwoNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MultiplyTwoNumberResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DivideTwoNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="a" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="b" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DivideTwoNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DivideTwoNumberResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCalulations">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCalulationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCalulationsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -41,6 +101,30 @@
   <wsdl:message name="AddTwoNumberSoapOut">
     <wsdl:part name="parameters" element="tns:AddTwoNumberResponse" />
   </wsdl:message>
+  <wsdl:message name="SubtractTwoNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:SubtractTwoNumber" />
+  </wsdl:message>
+  <wsdl:message name="SubtractTwoNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:SubtractTwoNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="MultiplyTwoNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:MultiplyTwoNumber" />
+  </wsdl:message>
+  <wsdl:message name="MultiplyTwoNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:MultiplyTwoNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="DivideTwoNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:DivideTwoNumber" />
+  </wsdl:message>
+  <wsdl:message name="DivideTwoNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:DivideTwoNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCalulationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCalulations" />
+  </wsdl:message>
+  <wsdl:message name="GetCalulationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCalulationsResponse" />
+  </wsdl:message>
   <wsdl:portType name="CalulatorWebServiceSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
@@ -49,6 +133,22 @@
     <wsdl:operation name="AddTwoNumber">
       <wsdl:input message="tns:AddTwoNumberSoapIn" />
       <wsdl:output message="tns:AddTwoNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubtractTwoNumber">
+      <wsdl:input message="tns:SubtractTwoNumberSoapIn" />
+      <wsdl:output message="tns:SubtractTwoNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MultiplyTwoNumber">
+      <wsdl:input message="tns:MultiplyTwoNumberSoapIn" />
+      <wsdl:output message="tns:MultiplyTwoNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DivideTwoNumber">
+      <wsdl:input message="tns:DivideTwoNumberSoapIn" />
+      <wsdl:output message="tns:DivideTwoNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCalulations">
+      <wsdl:input message="tns:GetCalulationsSoapIn" />
+      <wsdl:output message="tns:GetCalulationsSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="CalulatorWebServiceSoap" type="tns:CalulatorWebServiceSoap">
@@ -71,6 +171,42 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SubtractTwoNumber">
+      <soap:operation soapAction="http://tempuri.org/SubtractTwoNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MultiplyTwoNumber">
+      <soap:operation soapAction="http://tempuri.org/MultiplyTwoNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DivideTwoNumber">
+      <soap:operation soapAction="http://tempuri.org/DivideTwoNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCalulations">
+      <soap:operation soapAction="http://tempuri.org/GetCalulations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="CalulatorWebServiceSoap12" type="tns:CalulatorWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -85,6 +221,42 @@
     </wsdl:operation>
     <wsdl:operation name="AddTwoNumber">
       <soap12:operation soapAction="http://tempuri.org/AddTwoNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubtractTwoNumber">
+      <soap12:operation soapAction="http://tempuri.org/SubtractTwoNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MultiplyTwoNumber">
+      <soap12:operation soapAction="http://tempuri.org/MultiplyTwoNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DivideTwoNumber">
+      <soap12:operation soapAction="http://tempuri.org/DivideTwoNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCalulations">
+      <soap12:operation soapAction="http://tempuri.org/GetCalulations" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
