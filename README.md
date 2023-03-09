@@ -38,3 +38,9 @@ Encapsulates the WSDL into language specific ***Serializable Plain Old xxx Objec
 When a ***Web Service*** is consumed the proxy class will then serialize the parameters, prepares a SOAP request message and sends it to the web service.
 The web service executes the method and returns a SOAP response message to the proxy.
 The proxy class will then deserialize the SOAP response message and hands it the client application.
+
+### Enabling Session is ASMX
+To use ASP.NET Session object in a web service, the web service class must inherit from ***System.Web.Services.WebService*** class and ***EnableSession*** property of ***WebMethod*** attribute must be set to true.
+A ***Session*** is a series of related message exchanges. Session identifiers become necessary in cases where the communications infrastructure uses a stateless protocol such as HTTP.
+A **session ID** is typically granted to a visitor on their first visit to a site.
+It is different from a user ID in that sessions are typically short-lived (they expire after a preset time of inactivity which may be minutes or hours) and may become invalid after a certain goal has been met.
