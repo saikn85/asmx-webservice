@@ -44,3 +44,5 @@ To use ASP.NET Session object in a web service, the web service class must inher
 A ***Session*** is a series of related message exchanges. Session identifiers become necessary in cases where the communications infrastructure uses a stateless protocol such as HTTP.
 A **session ID** is typically granted to a visitor on their first visit to a site.
 It is different from a user ID in that sessions are typically short-lived (they expire after a preset time of inactivity which may be minutes or hours) and may become invalid after a certain goal has been met.
+For sessions to work, when **allowCookies** attribute is set to **true**, the client application accepts the cookie returned from the ASMX web service, and copies it into all future requests that are made to the web service.
+This ensures that the same session is maintained between the client and the web service.
