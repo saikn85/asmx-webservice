@@ -22,6 +22,11 @@ namespace CalculatorWebApp
         {
             decimal result = client.AddTwoNumber(Convert.ToDecimal(txtfirstNum.Text), Convert.ToDecimal(txtSecondNum.Text));
             lblResult.Text = result.ToString();
+
+            gvCalculations.DataSource = client.GetCalulations();
+            gvCalculations.DataBind();
+
+            gvCalculations.HeaderRow.Cells[0].Text = "Recent Calculations";
         }
     }
 }

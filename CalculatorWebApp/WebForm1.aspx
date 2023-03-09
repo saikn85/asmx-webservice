@@ -24,11 +24,20 @@
                 </tr>
                 <tr>
                     <td>Result</td>
-                    <td><asp:Label ID="lblResult" runat="server"></asp:Label></td>
+                    <td>
+                        <asp:Label ID="lblResult" runat="server"></asp:Label></td>
                 </tr>
                 <tr>
                     <td colspan="2">
+                        <asp:GridView ID="GridView1" runat="server" Style="margin-top: 16px">
+                        </asp:GridView>
                         <asp:Button ID="btnAdd" runat="server" Text="Sum" OnClick="btnAdd_Click" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <asp:GridView ID="gvCalculations" runat="server">
+                        </asp:GridView>
                     </td>
                 </tr>
             </table>
