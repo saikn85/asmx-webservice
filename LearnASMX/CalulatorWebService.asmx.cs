@@ -26,10 +26,10 @@ namespace LearnASMX
         #endregion
 
         // Similar to an API Endpoint
-        [WebMethod]
+        [WebMethod(Description = "Just a Simple Hello World!")]
         public string HelloWorld() => "Hello World";
 
-        [WebMethod(EnableSession = true)]
+        [WebMethod(EnableSession = true, Description = "Adds two numbers.", CacheDuration = 30)]
         public decimal AddTwoNumber(decimal a, decimal b)
         {
             if (Session["CALULATIONS"] != null)

@@ -127,10 +127,12 @@
   </wsdl:message>
   <wsdl:portType name="CalulatorWebServiceSoap">
     <wsdl:operation name="HelloWorld">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Just a Simple Hello World!</wsdl:documentation>
       <wsdl:input message="tns:HelloWorldSoapIn" />
       <wsdl:output message="tns:HelloWorldSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="AddTwoNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds two numbers.</wsdl:documentation>
       <wsdl:input message="tns:AddTwoNumberSoapIn" />
       <wsdl:output message="tns:AddTwoNumberSoapOut" />
     </wsdl:operation>
