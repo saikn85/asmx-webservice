@@ -53,3 +53,4 @@ This ensures that the same session is maintained between the client and the web 
 	- On the other hand, when this property is false, the response of the XML Web service method is returned to the client as it is being serialized.
 	- **In general, set BufferResponse to false**, only when the XML Web service method returns large amounts of data.
 	- For smaller amounts of data, web service performance is better when BufferResponse is set to true.
+- **CacheDuration** - Use this property, if you want to cache the results of a web service method. This is an integer property, and specifies the number of seconds that the response should be cached. **The response is cached for each unique parameter**.
