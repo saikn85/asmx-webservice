@@ -46,3 +46,10 @@ A **session ID** is typically granted to a visitor on their first visit to a sit
 It is different from a user ID in that sessions are typically short-lived (they expire after a preset time of inactivity which may be minutes or hours) and may become invalid after a certain goal has been met.
 For sessions to work, when **allowCookies** attribute is set to **true**, the client application accepts the cookie returned from the ASMX web service, and copies it into all future requests that are made to the web service.
 This ensures that the same session is maintained between the client and the web service.
+
+### Web Method Attributes
+- **Description** - Use to specify a description for the web service method.
+- **BufferResponse** - This is a boolean property. **Default is true**. When this property is true, the response of the XML Web service method is not returned to the client until either the response is completely serialized or the buffer is full.
+	- On the other hand, when this property is false, the response of the XML Web service method is returned to the client as it is being serialized.
+	- **In general, set BufferResponse to false**, only when the XML Web service method returns large amounts of data.
+	- For smaller amounts of data, web service performance is better when BufferResponse is set to true.
