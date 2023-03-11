@@ -54,3 +54,8 @@ This ensures that the same session is maintained between the client and the web 
 	- **In general, set BufferResponse to false**, only when the XML Web service method returns large amounts of data.
 	- For smaller amounts of data, web service performance is better when BufferResponse is set to true.
 - **CacheDuration** - Use this property, if you want to cache the results of a web service method. This is an integer property, and specifies the number of seconds that the response should be cached. **The response is cached for each unique parameter**.
+
+### Overloaded Web Methods
+Yes, one can **OVERLOAD** WebMethods. For a WebMethod to be overloaded, the following are required to be done.
+- The ***MessageName*** attribute of the WebMethod must be set.
+- **WSI binding** must be updated to **None**; that is, [WebServiceBinding(ConformsTo = WsiProfiles.None)]
