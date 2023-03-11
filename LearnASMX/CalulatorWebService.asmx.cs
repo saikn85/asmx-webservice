@@ -8,7 +8,7 @@ namespace LearnASMX
     /// </summary>
     // The namespace does its job of uniquely identifying a web service on the web
     [WebService(Namespace = "http://tempuri.org/")]
-    [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+    [WebServiceBinding(ConformsTo = WsiProfiles.None)] // For Overloades, we need to set the Profile to None
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line.
     // [System.Web.Script.Services.ScriptService]
@@ -28,6 +28,12 @@ namespace LearnASMX
         // Similar to an API Endpoint
         [WebMethod(Description = "Just a Simple Hello World!")]
         public string HelloWorld() => "Hello World";
+        
+        // Web Methods can be overloaded however, they require the
+        // MessageName attribute to be set. By default the MessageName
+        // attribute equates to the name of the method.
+        [WebMethod(MessageName = "HelloWorldWithName", Description = "Just a Simple Hello World!")]
+        public string HelloWorld(string name) => $"Hello {name}!";
 
         [WebMethod(EnableSession = true, Description = "Adds two numbers.", CacheDuration = 30)]
         public decimal AddTwoNumber(decimal a, decimal b)
